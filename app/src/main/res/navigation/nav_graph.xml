@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewPagerFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.example.homework.movies.HomepageFragment"
+        android:label="fragment_all_movies"
+        tools:layout="@layout/fragment_all_movies" >
+        <action
+            android:id="@+id/action_homepageFragment_to_allMoviesFragment2"
+            app:destination="@id/allMoviesFragment2" />
+        <action
+            android:id="@+id/action_homepageFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/allMoviesFragment2"
+        android:name="com.example.homework.movies.AllMoviesFragment"
+        android:label="AllMoviesFragment" >
+        <action
+            android:id="@+id/action_allMoviesFragment2_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+        <action
+            android:id="@+id/action_allMoviesFragment2_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.homework.load.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment2"
+        android:name="com.example.homework.movies.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment2_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_serialsFragment"
+            app:destination="@id/serialsFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_allActorsFragment"
+            app:destination="@id/allActorsFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_actorInfoFragment"
+            app:destination="@id/actorInfoFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_allImagesFragment"
+            app:destination="@id/allImagesFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_fullImageFragment"
+            app:destination="@id/fullImageFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_allMoviesFragment2"
+            app:destination="@id/allMoviesFragment2" />
+        <action
+            android:id="@+id/action_movieFragment2_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_filmographyFragment"
+            app:destination="@id/filmographyFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_movieFragment2_to_moviesFromProfileFragment"
+            app:destination="@id/moviesFromProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serialsFragment"
+        android:name="com.example.homework.serials.SerialsFragment"
+        android:label="SerialsFragment" >
+        <action
+            android:id="@+id/action_serialsFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/allActorsFragment"
+        android:name="com.example.homework.actors.AllActorsFragment"
+        android:label="fragment_all_actors"
+        tools:layout="@layout/fragment_all_actors" >
+        <action
+            android:id="@+id/action_allActorsFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+        <action
+            android:id="@+id/action_allActorsFragment_to_actorInfoFragment"
+            app:destination="@id/actorInfoFragment" />
+        <action
+            android:id="@+id/action_allActorsFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorInfoFragment"
+        android:name="com.example.homework.actors.ActorInfoFragment"
+        android:label="ActorInfoFragment" >
+        <action
+            android:id="@+id/action_actorInfoFragment_to_fullScreenPhotoFragment"
+            app:destination="@id/fullScreenPhotoFragment" />
+        <action
+            android:id="@+id/action_actorInfoFragment_to_filmographyFragment"
+            app:destination="@id/filmographyFragment" />
+        <action
+            android:id="@+id/action_actorInfoFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+        <action
+            android:id="@+id/action_actorInfoFragment_to_allActorsFragment"
+            app:destination="@id/allActorsFragment" />
+        <action
+            android:id="@+id/action_actorInfoFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullScreenPhotoFragment"
+        android:name="com.example.homework.actors.FullScreenPhotoFragment"
+        android:label="fragment_full_screen_photo"
+        tools:layout="@layout/fragment_full_screen_photo" >
+        <action
+            android:id="@+id/action_fullScreenPhotoFragment_to_actorInfoFragment"
+            app:destination="@id/actorInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmographyFragment"
+        android:name="com.example.homework.actors.FilmographyFragment"
+        android:label="fragment_filmography"
+        tools:layout="@layout/fragment_filmography" >
+        <action
+            android:id="@+id/action_filmographyFragment_to_actorInfoFragment"
+            app:destination="@id/actorInfoFragment" />
+        <action
+            android:id="@+id/action_filmographyFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+        <action
+            android:id="@+id/action_filmographyFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allImagesFragment"
+        android:name="com.example.homework.images.AllImagesFragment"
+        android:label="fragment_all_images"
+        tools:layout="@layout/fragment_all_images" >
+        <action
+            android:id="@+id/action_allImagesFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+        <action
+            android:id="@+id/action_allImagesFragment_to_fullImageFragment"
+            app:destination="@id/fullImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullImageFragment"
+        android:name="com.example.homework.images.FullImageFragment"
+        android:label="fragment_full_image"
+        tools:layout="@layout/fragment_full_image" >
+        <action
+            android:id="@+id/action_fullImageFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+        <action
+            android:id="@+id/action_fullImageFragment_to_allImagesFragment"
+            app:destination="@id/allImagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.homework.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchSettingsFragment"
+        android:name="com.example.homework.search.SearchSettingsFragment"
+        android:label="fragment_search_settings"
+        tools:layout="@layout/fragment_search_settings" >
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_genreFragment"
+            app:destination="@id/genreFragment" />
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_periodFragment"
+            app:destination="@id/periodFragment" />
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.example.homework.search.CountryFragment"
+        android:label="fragment_country"
+        tools:layout="@layout/fragment_country" >
+        <action
+            android:id="@+id/action_countryFragment_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.example.homework.search.GenreFragment"
+        android:label="fragment_genre"
+        tools:layout="@layout/fragment_genre" >
+        <action
+            android:id="@+id/action_genreFragment_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/periodFragment"
+        android:name="com.example.homework.search.PeriodFragment"
+        android:label="fragment_period"
+        tools:layout="@layout/fragment_period" >
+        <action
+            android:id="@+id/action_periodFragment_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.homework.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+        <action
+            android:id="@+id/action_profileFragment_to_moviesFromProfileFragment"
+            app:destination="@id/moviesFromProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesFromProfileFragment"
+        android:name="com.example.homework.movies.MoviesFromProfileFragment"
+        android:label="MoviesFromProfileFragment" >
+        <action
+            android:id="@+id/action_moviesFromProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_moviesFromProfileFragment_to_movieFragment2"
+            app:destination="@id/movieFragment2" />
+    </fragment>
+
+</navigation>

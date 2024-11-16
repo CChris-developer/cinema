@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBar_frame_layout_all_actors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            android:indeterminateTint="@color/purple_700"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_all_actors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="55dp"
+            android:orientation="vertical"
+            tools:context=".actors.AllActorsFragment">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@null"
+                    android:src="@drawable/caret_left" />
+
+                <TextView
+                    android:id="@+id/actors_in_movie_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/actors_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/actor_item" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".search.GenreFragment">
+
+    <RelativeLayout
+        android:id="@+id/search_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="40dp">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@null"
+            android:src="@drawable/caret_left" />
+
+        <TextView
+            android:id="@+id/search_settings_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/genre_name"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutGenre"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/enter_genre"
+        app:boxBackgroundColor="@color/light_grey"
+        app:boxCornerRadiusBottomEnd="24dp"
+        app:boxCornerRadiusBottomStart="24dp"
+        app:boxCornerRadiusTopEnd="24dp"
+        app:boxCornerRadiusTopStart="24dp"
+        app:boxStrokeWidth="0dp"
+        app:startIconDrawable="@drawable/search_icon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchStringGenre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/genre_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <RadioButton
+            android:id="@+id/radio_btn_comedy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector_country"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:gravity="start|center_vertical"
+            android:paddingStart="26dp"
+            android:text="@string/comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_melodrama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_selector_country_no_border"
+            android:button="@android:color/transparent"
+            android:gravity="start|center_vertical"
+            android:paddingStart="26dp"
+            android:text="@string/melodrama"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_selector_country"
+            android:button="@android:color/transparent"
+            android:gravity="start|center_vertical"
+            android:paddingStart="26dp"
+            android:text="@string/action_movie"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_western"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_selector_country_no_border"
+            android:button="@android:color/transparent"
+            android:gravity="start|center_vertical"
+            android:paddingStart="26dp"
+            android:text="@string/western"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_drama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_selector_country"
+            android:button="@android:color/transparent"
+            android:gravity="start|center_vertical"
+            android:paddingStart="26dp"
+            android:text="@string/drama"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16" />
+
+    </RadioGroup>
+
+</LinearLayout>

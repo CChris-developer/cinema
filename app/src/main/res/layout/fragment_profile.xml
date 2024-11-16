@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".profile.ProfileFragment">
+
+        <RelativeLayout
+            android:id="@+id/viewed_movies_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/viewed_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/viewed_movies"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/more_movies"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/more_actors"
+                android:visibility="visible"
+
+                />
+
+            <Button
+                android:id="@+id/viewed_movies_count"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="25dp"
+                android:layout_height="29dp"
+                android:layout_toLeftOf="@id/more_movies"
+                android:backgroundTint="@color/white"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="0dp"
+                android:textColor="@color/purple_600"
+                android:textSize="@dimen/text_size_14" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/viewed_movies_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="20dp">
+
+            <ProgressBar
+                android:id="@+id/viewed_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/purple_700"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/no_viewed_movies_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/no_data"
+                android:textSize="@dimen/text_size_16"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/viewed_recycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/movie_item" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/collection_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/collection"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/checkbox_container3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginVertical="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/new_collection_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/plus_collection" />
+
+            <TextView
+                android:id="@+id/new_collection_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/new_collection_button"
+                android:paddingVertical="5dp"
+                android:text="@string/new_collection"
+                android:textSize="@dimen/text_size_16" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <GridLayout
+                android:id="@+id/collection_grid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="26dp"
+                android:columnCount="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view_1"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="left"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/favourite_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="60dp"
+                        android:background="@drawable/search_settings_background"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/favourite_image_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/heart" />
+
+                        <TextView
+                            android:id="@+id/favourite_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp"
+                            android:text="@string/favourite_movies"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/favourite_count"
+                            android:layout_width="35dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/textview_rating"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_10" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view_2"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="end"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/want_to_see_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="60dp"
+                        android:background="@drawable/search_settings_background"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/want_to_see_imageview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bookmark" />
+
+                        <TextView
+                            android:id="@+id/want_to_see_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp"
+                            android:text="@string/want_to_see"
+                            android:textSize="@dimen/text_size_12" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/want_to_see_count"
+                            android:layout_width="35dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/textview_rating"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_10" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </GridLayout>
+
+            <ProgressBar
+                android:id="@+id/grid_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/purple_700"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/interesting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/interesting_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/interesting"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/more_interesting"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/more_actors"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/interesting_count"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="25dp"
+                android:layout_height="29dp"
+                android:layout_toStartOf="@id/more_interesting"
+                android:backgroundTint="@color/white"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="0dp"
+                android:textColor="@color/purple_600"
+                android:textSize="@dimen/text_size_14" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/interested_movies_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="55dp">
+
+            <ProgressBar
+                android:id="@+id/interested_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/purple_700"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/no_interested_movies_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/no_data"
+                android:textSize="@dimen/text_size_16"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/interesting_recycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/movie_item" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

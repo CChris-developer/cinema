@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/progressBar_actor_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="100dp"
+        android:indeterminateTint="@color/purple_700"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actor_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".actors.ActorInfoFragment"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/fragment_actor_info_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:src="@drawable/caret_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/actor_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_actor_info_back">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/actor_photo"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:clickable="true"
+                tools:src="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/actor_name_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_16"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/actor_profession_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/best_movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actor_info">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_movies"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/no_best_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_14"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/best_movies_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/movie_item" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/actor_movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="55dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/best_movies">
+
+            <TextView
+                android:id="@+id/movies_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/movies"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/more_movies"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/more_actors"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/to_list"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_toStartOf="@id/more_movies"
+                android:backgroundTint="@color/white"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="@string/to_list"
+                android:textAllCaps="false"
+                android:textColor="@color/purple_600"
+                android:textSize="@dimen/text_size_14" />
+
+            <TextView
+                android:id="@+id/actor_movies_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movies_header"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/text_size_12" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

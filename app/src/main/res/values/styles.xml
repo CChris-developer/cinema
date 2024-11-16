@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="skip">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/text_color_skip</item>
+    </style>
+
+    <style name="info_onboarding">
+        <item name="android:textSize">@dimen/text_size_32</item>
+        <item name="android:textColor">@color/light_black</item>
+    </style>
+
+    <style name="button_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/purple_700</item>
+        <item name="android:buttonCornerRadius">20dp</item>
+    </style>
+
+    <style name="CustomNewCollectionStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:buttonBarPositiveButtonStyle">@color/purple_700</item>
+        <item name="android:dialogCornerRadius">20dp</item>
+    </style>
+
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/background_color_chip_state_list</item>
+        <item name="chipStrokeColor">@color/stroke_color_chip_state_list</item>
+        <item name="android:textColor">@color/text_color_chip_state_list</item>
+    </style>
+
+    <style name="RadioButtonText">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/text_color_chip_state_list</item>
+    </style>
+
+    <style name="countryStyle">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+</resources>
